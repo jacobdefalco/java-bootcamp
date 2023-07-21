@@ -23,6 +23,35 @@ public class grading {
                 }
             }
         } while (grade < 1 || grade > 100);
+
+        switch (grade) {
+            case value:
+
+                break;
+
+            case value:
+
+                break;
+
+            case value:
+
+                break;
+
+            case value:
+
+                break;
+
+            case value:
+
+                break;
+
+            default:
+                break;
+        }
+
+        // if (grade <= 100 && grade >= 90 ) {
+
+        // }
         GradeObj.close();
     }
 }
