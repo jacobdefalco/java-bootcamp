@@ -14,16 +14,16 @@ public class GradeBook {
         Scanner GradeBookObj = new Scanner(System.in);
         System.out.println("************");
 
-        String yesno = "y";
-        System.out.println("Would you like to input grades? Y/N");
-        yesno = (GradeBookObj.nextLine()).toLowerCase();
+        String yesno;
         do {
+            System.out.println("Would you like to input grades? Y/N");
+            yesno = (GradeBookObj.next()).toLowerCase();
 
             if (yesno.equals("y")) {
                 System.out.println("Student name:");
-                String studentName = GradeBookObj.nextLine();
+                String studentName = GradeBookObj.next();
                 System.out.println("Course name:");
-                String courseName = GradeBookObj.nextLine();
+                String courseName = GradeBookObj.next();
 
                 int midtermGrade;
                 int finalGrade;
@@ -43,6 +43,25 @@ public class GradeBook {
 
                 double averageGrade = (midtermGrade + finalGrade + projectGrade) / 3;
 
+                char letterGrade = 'A';
+                if (averageGrade <= 100 && averageGrade >= 90) {
+                    letterGrade = 'A';
+                }
+                if (averageGrade <= 89 && averageGrade >= 80) {
+                    letterGrade = 'B';
+                }
+                if (averageGrade <= 79 && averageGrade >= 70) {
+                    letterGrade = 'C';
+                }
+                if (averageGrade <= 69 && averageGrade >= 60) {
+                    letterGrade = 'D';
+                }
+                if (averageGrade <= 59) {
+                    letterGrade = 'G';
+                }
+
+                String feeback = "You have earned " + letterGrade + " for this class.";
+
                 System.out.println("********Grade Results********");
                 System.out.println("Student Name: " + studentName);
                 System.out.println("Course Name: " + courseName);
@@ -50,8 +69,14 @@ public class GradeBook {
                 System.out.println("Final Exam Grade: " + finalGrade);
                 System.out.println("Project Grade: " + projectGrade);
                 System.out.println("Average Exam Grade: " + averageGrade);
+                System.out.println(feeback);
+            } else if (yesno.equals("n")) {
+                System.out.println("LATER LOSER");
+            } else {
+                System.out.println("That is an invalid input. Input must be y/n. Ya dummy");
+                yesno = "y";
             }
-        } while ("y".equals(yesno));
+        } while (yesno.equals("y"));
         GradeBookObj.close();
     }
 }
