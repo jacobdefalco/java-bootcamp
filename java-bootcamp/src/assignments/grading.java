@@ -13,13 +13,16 @@ public class grading {
         do {
             System.out.println("What is your grade?");
             grade = GradeObj.nextInt();
-            System.out.println("The inputted number must be between 1 and 100");
+            if (grade < 1 || grade > 100) {
+                System.out.println("The inputted number must be between 1 and 100");
+            } else {
+                if (grade % 2 == 0) {
+                    System.out.println("The grade is an even number");
+                } else {
+                    System.out.println("The grade is an odd number");
+                }
+            }
         } while (grade < 1 || grade > 100);
-        if (grade % 2 == 0) {
-            System.out.println("The grade is an even number");
-        } else {
-            System.out.println("The grade is an odd number");
-        }
         GradeObj.close();
     }
 }
