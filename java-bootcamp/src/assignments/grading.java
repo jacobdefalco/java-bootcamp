@@ -23,35 +23,21 @@ public class grading {
                 }
             }
         } while (grade < 1 || grade > 100);
-
-        switch (grade) {
-            case value:
-
-                break;
-
-            case value:
-
-                break;
-
-            case value:
-
-                break;
-
-            case value:
-
-                break;
-
-            case value:
-
-                break;
-
-            default:
-                break;
+        if (grade <= 100 && grade >= 90) {
+            System.out.println("Congrats! You got an A!");
         }
-
-        // if (grade <= 100 && grade >= 90 ) {
-
-        // }
+        if (grade <= 89 && grade >= 80) {
+            System.out.println("You got an B!");
+        }
+        if (grade <= 79 && grade >= 70) {
+            System.out.println("You got an C!");
+        }
+        if (grade <= 69 && grade >= 60) {
+            System.out.println("You got an D!");
+        }
+        if (grade <= 59) {
+            System.out.println("You got an F!");
+        }
         GradeObj.close();
     }
 }
