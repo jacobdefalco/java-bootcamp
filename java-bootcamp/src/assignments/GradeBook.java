@@ -57,7 +57,7 @@ public class GradeBook {
                     letterGrade = 'D';
                 }
                 if (averageGrade <= 59) {
-                    letterGrade = 'G';
+                    letterGrade = 'F';
                 }
 
                 String feeback = "You have earned " + letterGrade + " for this class.";
