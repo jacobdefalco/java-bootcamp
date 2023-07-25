@@ -1,4 +1,4 @@
-package assignmentsZips;
+package assignments;
 
 import java.text.DecimalFormat;
 
